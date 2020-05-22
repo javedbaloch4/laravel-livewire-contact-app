@@ -5,7 +5,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa fa-search"></i></span>
             </div>
-            <input type="text" class="form-control shadow-none" aria-label="" placeholder="Search for Contact"
+            <input type="text" wire:model="searchQuery" wire:keydown.enter="search" class="form-control shadow-none" aria-label="" placeholder="Search for Contact"
                    aria-describedby="inputGroup-sizing-lg">
         </div>
 
@@ -28,7 +28,6 @@
         <div class="clearfix"></div>
 
         @livewire('contact-app-list', ['contacts' => $contacts, 'viewMode' => $viewMode], key(time()))
-
 
         <!-- Button trigger modal -->
         <div class="col-md-12">
